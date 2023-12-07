@@ -115,8 +115,8 @@
                         echo "Miss Vivian";
                       }else if ($_GET["name"] == "temidayo"){
                         echo "Mr Temidayo";
-                      }else if($_GET["name"] == "wale"){
-                        echo "Mr Wale";
+                      }else if($_GET["name"] == "tope"){
+                        echo "Mr Tope";
                       }else{
                         echo "Guest";
                       }
