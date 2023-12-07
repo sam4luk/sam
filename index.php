@@ -102,26 +102,31 @@
                 <div class="row">
                   <div class="col-md-5">
                     <div class="detail-box">
+                    <?php if (isset($_GET["name"]) ) { ?>
+                          <h1>
+                            Welcome 
+                              <?php 
+                                  $name = $_GET["name"]; 
+                                  echo $name;
+                              ?>
+                            <br />
+                            Furniture Needs
+                          </h1>
+
+                          <h4>Profile</h4>
+                          <ul>
+                            <li>Age: <?php echo $age = (isset($_GET["age"])) ? $_GET["age"] : "Please enter your age"; ?></li>
+                            <li>Gender: <?php echo $gender = (isset($_GET["gender"])) ? $_GET["gender"] : "Please enter your gender"; ?></li>
+                            <li>Phone Number: <?php echo $phone_no = (isset($_GET["phone_no"])) ? $_GET["phone_no"] : "Please enter your phone number"; ?></li>
+                            <li>State: <?php echo $state = (isset($_GET["state"])) ? $_GET["state"] : "Please enter your state"; ?></li>
+                            <li>Zip Code: <?php echo $zip_code = (isset($_GET["zip_code"])) ? $_GET["zip_code"] : "Please enter your zip code"; ?></li>
+                          </ul>
+                      <?php } else { $name = 0;}?>
                       <h1>
-                        Welcome <?php if (isset($_GET["name"])) {
-                         $name = $_GET["Kola"];
-                        }
-                        else {
-                      $name = 0;
-                      }
-                      echo "Mr Kola";
-                      
-                      if (isset($_GET["name"])) {
-                        $name = $_GET["Tunde"];
-                       }
-                       else {
-                     $name = 0;
-                     }
-                     echo "Mr Tunde"
-                      ?>
-                        <br />
+                        For All Your <br />
                         Furniture Needs
                       </h1>
+                  
                       <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Minus quidem maiores perspiciatis, illo maxime
