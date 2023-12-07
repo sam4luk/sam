@@ -103,23 +103,21 @@
                   <div class="col-md-5">
                     <div class="detail-box">
                       <h1>
-                        Welcome <?php if($_GET["name"] == "kola"){
-                     echo "Mr Kola";
-                      }else if($_GET["name"] == "tunde"){
-                      echo "Mr Tunde";
-                      }else if($_GET["name"] == "bose"){
-                      echo "Mrs. Bose";
-                      }else if($_GET["name"] == "bose"){
-                        echo "Mrs. Bose";
-                      }else if($_GET["name"] == "vivian"){
-                        echo "Miss Vivian";
-                      }else if ($_GET["name"] == "temidayo"){
-                        echo "Mr Temidayo";
-                      }else if($_GET["name"] == "tope"){
-                        echo "Mr Tope";
-                      }else{
-                        echo "Guest";
+                        Welcome <?php if (isset($_GET["name"])) {
+                         $name = $_GET["Kola"];
+                        }
+                        else {
+                      $name = 0;
                       }
+                      echo "Mr Kola";
+                      
+                      if (isset($_GET["name"])) {
+                        $name = $_GET["Tunde"];
+                       }
+                       else {
+                     $name = 0;
+                     }
+                     echo "Mr Tunde"
                       ?>
                         <br />
                         Furniture Needs
