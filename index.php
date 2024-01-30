@@ -102,31 +102,12 @@
                 <div class="row">
                   <div class="col-md-5">
                     <div class="detail-box">
-                    <?php if (isset($_GET["name"]) ) { ?>
-                          <h1>
-                            Welcome 
-                              <?php 
-                                  $name = $_GET["name"]; 
-                                  echo $name;
-                              ?>
-                            <br />
-                            Furniture Needs
-                          </h1>
 
-                          <h4>Profile</h4>
-                          <ul>
-                            <li>Age: <?php echo $age = (isset($_GET["age"])) ? $_GET["age"] : "Please enter your age"; ?></li>
-                            <li>Gender: <?php echo $gender = (isset($_GET["gender"])) ? $_GET["gender"] : "Please enter your gender"; ?></li>
-                            <li>Phone Number: <?php echo $phone_no = (isset($_GET["phone_no"])) ? $_GET["phone_no"] : "Please enter your phone number"; ?></li>
-                            <li>State: <?php echo $state = (isset($_GET["state"])) ? $_GET["state"] : "Please enter your state"; ?></li>
-                            <li>Zip Code: <?php echo $zip_code = (isset($_GET["zip_code"])) ? $_GET["zip_code"] : "Please enter your zip code"; ?></li>
-                          </ul>
-                      <?php } else { $name = 0;}?>
                       <h1>
                         For All Your <br />
                         Furniture Needs
                       </h1>
-                  
+
                       <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Minus quidem maiores perspiciatis, illo maxime
@@ -216,6 +197,55 @@
       </section>
       <!-- end slider section -->
     </div>
+    <div>
+    <h2>DATA FORM</h2>
+    <div class="class1">
+      <div>
+      <form action="">
+  <label for="fname">Names:</label>
+  <input type="text" id="fname" name="kname" value=""><br>
+  <label for="fname">Age:</label>
+  <input type="text" id="fname" name="age" value=""><br>
+  <label for="fname">Gender:</label>
+  <input type="text" id="fname" name="fname" value=""><br>
+  <label for="lname">State of Origin:</label>
+  <input type="text" id="fname" name="fname" value=""><br>
+  <label for="fname">Local Goverment:</label>
+  <input type="text" id="fname" name="fname" value=""><br>
+  <label for="fname">Country:</label>
+  <input type="text" id="lname" name="lname" value=""><br><br>
+  <input type="submit" value="Submit">
+</form>
+      </div>
+      <div>
+      <?php if (isset($_POST["kname"])) {?>
+                          <h1>
+                            Welcome
+                              <?php
+$name = $_GET["kname"];
+    echo $name;
+    ?>
+
+                            <br />
+                            Furniture Needs
+                          </h1>
+
+                          <h4>Profile</h4>
+                          <ul>
+                            <li>Age: <?php echo $age = (isset($_GET["age"])) ? $_GET["age"] : "Please enter your age"; ?></li>
+                            <li>Gender: <?php echo $gender = (isset($_GET["gender"])) ? $_GET["gender"] : "Please enter your gender"; ?></li>
+                            <li>Phone Number: <?php echo $phone_no = (isset($_GET["phone_no"])) ? $_GET["phone_no"] : "Please enter your phone number"; ?></li>
+                            <li>State: <?php echo $state = (isset($_GET["state"])) ? $_GET["state"] : "Please enter your state"; ?></li>
+                            <li>Zip Code: <?php echo $zip_code = (isset($_GET["zip_code"])) ? $_GET["zip_code"] : "Please enter your zip code"; ?></li>
+                          </ul>
+
+                      <?php } else { $name = 0;}?>
+      </div>
+    </div>
+
+
+
+    </div>
 
     <!-- furniture section -->
 
@@ -228,14 +258,83 @@
             passage of Lorem Ipsum, you need to be sure there isn't an
           </p>
         </div>
+        <?php
+$pArray = [
+   [
+
+        "title" => "Brown Chaisr Design",
+        "price" => 100.00,
+        "image" => "images/f1.png",
+
+    ],
+   [
+
+        "title" => "House Chair Design",
+        "price" => 200, 00,
+        "image" => "images/f2.png",
+    ],
+    [
+        "title" => "brown Table Design",
+        "price" => 200, 00,
+        "image" => "images/f3.png",
+
+    ],
+    [
+        "title" => "Blue Chair Design",
+        "price" => 100, 00,
+        "image" => "images/f4.png",
+    ],
+    [
+        "title" => "Double Bed Design",
+        "price" => 200, 00,
+        "image" => "images/f5.png",
+    ],
+    [
+        "title" => "brown Table Design",
+        "price" => 200, 00,
+        "image" => "images/f6.png",
+    ],
+];
+?>
+<form action="" method="post">
+  <label for="fname">Input specific Number:</label><br>
+  <input type="text" id="fname" name="fname" value=""><br><br>
+  <input type="submit" value="Submit">
+</form>
+<?php if (isset($_POST["fname"])) 
+$SEED = $_POST["fname"];
+?>
+
+<?php for ($i = 0; $i < $SEED; $i++){?>
+
+<div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="img-box">
+                <img src="<?php echo $pArray[$i]["image"]; ?>" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5><?php echo $pArray[$i]["title"]; ?></h5>
+                <div class="price_box">
+                  <h6 class="price_heading"><span>$</span><?php echo $pArray[$i]["price"]; ?></h6>
+                  <a href=""> Buy Now </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+    <?php } ?>  
+
         <div class="row">
-          <div class="col-md-6 col-lg-4">
+              <div class="col-md-6 col-lg-4">
             <div class="box">
               <div class="img-box">
                 <img src="images/f1.png" alt="" />
               </div>
               <div class="detail-box">
-                <h5>brown Chair Design</h5>
+                <h5>Brown Chaisr Design</h5>
                 <div class="price_box">
                   <h6 class="price_heading"><span>$</span> 100.00</h6>
                   <a href=""> Buy Now </a>
@@ -356,8 +455,52 @@
         <div class="heading_container">
           <h3>Latest Blog</h3>
         </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
+        
+      <?php
+$farray = [
+   [
+        "title" => "Look even slightly believable. If you are",
+        "image" => "images/b1.jpg",
+    ],
+   [
+        "title" => "Anything embarrassing hidden in the middle",
+        "image" => "images/b2.jpg",
+    ],
+    [
+        "title" => "Third Place holder",
+        "image" => "images/b3.jpg",
+    ],
+];
+?>
+<form action="" method="post">
+  <label for="pname">enter search:</label><br>
+  <input type="text" id="pname" name="pname" value=""><br><br>
+  <input type="submit" value="Submit">
+</form>
+<?php if (isset($_POST["pname"])) 
+$DAYO = $_POST["pname"];
+?>
+
+<?php for ($i = 0; $i < $DAYO; $i++){?>
+<div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="img-box">
+                <img src="<?php echo $farray[$i]["image"]; ?>" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5><?php echo $farray[$i]["title"]; ?></h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+                  est nesciunt quos consequuntur hic ducimus cum, dolor eligendi
+                  nulla
+                </p>
+                <a href=""> Read More </a>
+              </div>
+            </div>
+          </div>
+  <?php } ?>   
+  <div class="row">     
+  <div class="col-md-6 col-lg-4">
             <div class="box">
               <div class="img-box">
                 <img src="images/b1.jpg" alt="" />

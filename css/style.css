@@ -848,4 +848,8 @@ a:focus {
 .footer_section p a {
   color: inherit;
 }
+.class1{
+  display:flex;
+  justify-content:space-between;
+}
 /* # sourceMappingURL=style.css.map */
